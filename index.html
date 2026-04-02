@@ -92,14 +92,14 @@
       overflow:hidden;
       background:#201b16;
     }
-    .hero__bg{
-      position:absolute;
-      inset:0;
-      background:
-        linear-gradient(90deg, rgba(19,16,13,.70) 0%, rgba(19,16,13,.42) 36%, rgba(19,16,13,.08) 72%),
-        url('images/hero.jpg') center center / cover no-repeat;
-      transform:scale(1.02);
-    }
+    .hero__bg {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(19,16,13,.70) 0%, rgba(19,16,13,.42) 36%, rgba(19,16,13,.08) 72%),
+    url('images/hero.jpg') center center / cover no-repeat;
+  transform: scale(1.02);
+}
     .hero__inner{
       position:relative;
       z-index:1;
@@ -253,18 +253,8 @@
       grid-template-columns:repeat(3, 1fr);
       gap:14px;
       margin-top:10px;
-    } 
-      .about__image{
-      
-      background:
-        linear-gradient(180deg, rgba(17,13,10,.04), rgba(17,13,10,.04)),
-        url('images/about.jpg') center center / cover no-repeat;
-      border-radius:var(--radius-xl);
-      min-height:540px;
     }
-
     .stat{
-      position:relative;
       padding:18px;
       border-radius:20px;
       background:#f3ede6;
@@ -277,16 +267,12 @@
       line-height:1;
       font-weight:700;
     }
-    .stat__number{
-      display:inline-block;
-      min-width:2ch;
-    }
     .stat span{font-size:13px;color:var(--muted)}
     .about__image{
-      min-height:100%;
+      
       background:
         linear-gradient(180deg, rgba(17,13,10,.04), rgba(17,13,10,.04)),
-        url('/mnt/data/a_high_resolution_digital_photograph_captures_lake.png') center center / cover no-repeat;
+        url('images/about.jpg') center center / cover no-repeat;
       border-radius:var(--radius-xl);
       min-height:540px;
     }
@@ -297,7 +283,7 @@
       gap:24px;
     }
     .cottage-card{overflow:hidden}
-     .cottage-card__media1 {
+    .cottage-card__media1 {
       aspect-ratio:4/3;
       background:
         linear-gradient(180deg, rgba(0,0,0,.06), rgba(0,0,0,.10)),
@@ -323,7 +309,6 @@
       background-position:center 68%;
       filter:brightness(.94);
     }
-    
     .cottage-card__body{padding:28px}
     .cottage-card__top{
       display:flex;
@@ -338,7 +323,7 @@
       font-size:34px;
       line-height:1;
       font-weight:600;
-    }
+    } 
     .price{
       white-space:nowrap;
       font-size:14px;
@@ -356,7 +341,7 @@
       margin-bottom:22px;
     }
     .meta span{
-      padding:8px 12px;
+      padding:8px 10px;
       border-radius:999px;
       border:1px solid var(--line);
       font-size:13px;
@@ -389,7 +374,7 @@
       grid-template-rows:280px 220px;
       gap:20px;
     }
-     .gallery__item{
+    .gallery__item{
   border-radius:28px;
   overflow:hidden;
   box-shadow:var(--shadow);
@@ -439,65 +424,109 @@
     .gallery__item:nth-child(4){background-position:center 40%}
     .gallery__item:nth-child(5){background-position:center 62%}
 
-    .gallery__caption{
-      position:absolute;
-      left:18px;
-      right:18px;
-      bottom:18px;
-      z-index:2;
-      padding:18px 20px;
-      border-radius:20px;
-      background:rgba(18,15,12,.44);
-      backdrop-filter:blur(10px);
-      border:1px solid rgba(255,255,255,.14);
-      color:var(--white);
-      box-shadow:0 12px 30px rgba(0,0,0,.14);
-      opacity:0;
-      transform:translateY(18px);
-      transition:opacity .35s ease, transform .35s ease;
+    .booking{
+      display:grid;
+      grid-template-columns:.95fr 1.05fr;
+      gap:30px;
     }
-    .gallery__caption strong{
-      display:block;
-      margin-bottom:6px;
-      font-size:17px;
+    .booking__intro,
+    .booking__form{padding:40px}
+    .booking__intro h2,
+    .booking__form h2{
+      margin:0 0 18px;
+      font-family:"Cormorant Garamond",serif;
+      font-size:52px;
+      line-height:.98;
       font-weight:600;
-      letter-spacing:.01em;
     }
-    .gallery__caption span{
-      display:block;
-      font-size:14px;
-      line-height:1.6;
-      color:rgba(247,243,238,.82);
+    .booking__intro p,
+    .booking__form p{margin:0 0 22px;color:var(--muted);font-size:17px;line-height:1.8}
+    .booking-list{
+      display:grid;
+      gap:14px;
+      margin-top:24px;
     }
-    .gallery__item::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.04) 100%);
-      opacity:0;
-      transition:opacity .35s ease;
+    .booking-list div{
+      padding:16px 18px;
+      border-radius:18px;
+      background:#f3ede6;
+      border:1px solid rgba(30,27,24,.06);
+      font-size:15px;
+      color:var(--text);
     }
-    .gallery__item:hover::after{opacity:1}
-    .gallery__item:hover .gallery__caption{
-      opacity:1;
-      transform:translateY(0);
+    .form-grid{
+      display:grid;
+      grid-template-columns:repeat(2, 1fr);
+      gap:14px;
     }
-    .field input:focus,
-    .field select:focus,
-    .field textarea:focus{border-color:rgba(156,118,82,.5);box-shadow:0 0 0 4px rgba(156,118,82,.10)}
+    .field{display:grid;gap:8px}
+    .field--full{grid-column:1 / -1}
+    .field label{font-size:13px;font-weight:600;color:var(--muted)}
+    .field input,
+    .field select,
+    .field textarea{
+      width:100%;
+      min-height:54px;
+      padding:0 16px;
+      border-radius:16px;
+      border:1px solid var(--line);
+      background:#fff;
+      color:var(--text);
+      font:inherit;
+      outline:none;
+    }
+    .field textarea{min-height:120px;padding:14px 16px;resize:vertical}
+    .booking__form .btn{margin-top:18px;width:100%}
 
-    @media (prefers-reduced-motion: reduce){
-      html{scroll-behavior:auto}
-      *, *::before, *::after{animation:none !important;transition:none !important}
-      .reveal,
-      .reveal-up,
-      .reveal-scale,
-      .reveal-left,
-      .reveal-right,
-      .hero__content > *,
-      .hero__note{opacity:1 !important;transform:none !important}
+    .footer{
+      padding:34px 0 46px;
+      color:var(--muted);
     }
-</style>
+    .footer__inner{
+      width:var(--container);
+      margin:0 auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      border-top:1px solid var(--line);
+      padding-top:24px;
+      font-size:14px;
+    }
+
+    @media (max-width: 1100px){
+      .hero__inner,
+      .about,
+      .booking{grid-template-columns:1fr}
+      .hero__note{justify-self:start}
+      .cottages,
+      .features{grid-template-columns:repeat(2,1fr)}
+      .gallery{grid-template-columns:1fr 1fr;grid-template-rows:260px 220px 220px}
+      .gallery__item--large{grid-column:1 / -1;grid-row:auto}
+    }
+
+    @media (max-width: 760px){
+      .site-header{padding:22px 0}
+      .site-header__inner{align-items:flex-start}
+      .nav{display:none}
+      .hero{min-height:auto}
+      .hero__inner{padding:140px 0 70px;gap:24px}
+      .hero__lead{font-size:18px}
+      .section{padding:82px 0}
+      .section-head{margin-bottom:24px}
+      .section-head h2{font-size:42px}
+      .section-head p{font-size:16px}
+      .about__content,.booking__intro,.booking__form{padding:28px}
+      .about__stats,
+      .cottages,
+      .features,
+      .form-grid{grid-template-columns:1fr}
+      .gallery{grid-template-columns:1fr;grid-template-rows:260px 220px 220px 220px 220px}
+      .btn{width:100%}
+      .hero__actions{flex-direction:column}
+      .footer__inner{flex-direction:column;align-items:flex-start}
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -535,39 +564,38 @@
         </div>
         <aside class="hero__note">
           <strong>Quiet mornings, warm wood, open water.</strong>
-          <p>Designed as a premium portfolio concept for a Karelia rental brand with a calm visual language, editorial typography and strong conversion-first layout.</p>
+          <p>A private lakeside retreat where architecture meets nature. Designed for slow living, calm moments and a deep connection with the surrounding landscape.</p>
         </aside>
       </div>
     </section>
 
-    <section class="section reveal-up" id="about">
+    <section class="section" id="about">
       <div class="container">
         <div class="section-head">
           <div>
             <span class="eyebrow" style="color: var(--accent);">About</span>
-            <h2>A calm escape built around the lak</h2>
+            <h2>A calm escape built around the lake</h2>
           </div>
           <p>A collection of carefully designed cottages by the lake, where architecture meets nature and every stay feels calm, private and effortless.</p>
         </div>
 
         <div class="about">
-          <div class="card about__content reveal-left">
-           <p>Lake Houses Karelia is a collection of private lakeside cottages surrounded by pine forests and natural silence. </p>
+          <div class="card about__content">
+            <p>Lake Houses Karelia is a collection of private lakeside cottages surrounded by pine forests and natural silence. </p>
 
 <p>Each house is designed as a personal retreat — a place to slow down, disconnect from the city and reconnect with nature in comfort. Large windows, natural materials and warm interiors create a calm and inviting atmosphere all year round.
 
-Whether it’s a quiet weekend, a romantic getaway or a longer stay, the experience is built around privacy, simplicity and the beauty of northern landscapes.</p> <div class="about__stats">
-              <div class="stat"><strong><span class="stat__number" data-count="6">0</span></strong><span>unique cottages</span></div>
-              <div class="stat"><strong><span class="stat__number" data-count="24">0</span>/7</strong><span>self check-in</span></div>
-              <div class="stat"><strong><span class="stat__number" data-count="100">0</span>%</strong><span>lakefront location</span></div>
+Whether it’s a quiet weekend, a romantic getaway or a longer stay, the experience is built around privacy, simplicity and the beauty of northern landscapes.</p>
+            <div class="about__stats">
+              <div class="stat"><strong>6</strong><span>unique cottages</span></div>
+              <div class="stat"><strong>24/7</strong><span>self check-in</span></div>
+              <div class="stat"><strong>100%</strong><span>lakefront location</span></div>
             </div>
           </div>
-          </div>
-          <div class="about__image card reveal-right" aria-hidden="true"></div>
+          <div class="about__image card" aria-hidden="true"></div>
         </div>
       </div>
     </section>
-
 
     <section class="section section--compact" id="cottages">
       <div class="container">
@@ -644,7 +672,7 @@ Whether it’s a quiet weekend, a romantic getaway or a longer stay, the experie
           <p>The experience is built around what matters most in a true northern escape: quiet surroundings, thoughtful details and effortless booking.</p>
         </div>
 
-        <div class="features reveal-up">
+        <div class="features">
           <article class="card feature">
             <div class="feature__icon">✦</div>
             <h3>Private lakefront</h3>
@@ -672,7 +700,7 @@ Whether it’s a quiet weekend, a romantic getaway or a longer stay, the experie
     <section class="section" id="gallery">
       <div class="container">
         <div class="section-head">
-         <div>
+          <div>
             <span class="eyebrow" style="color: var(--accent);">Gallery</span>
             <h2>Atmosphere of slow mornings</h2>
           </div>
@@ -680,37 +708,12 @@ Whether it’s a quiet weekend, a romantic getaway or a longer stay, the experie
 Every detail of the surroundings is designed to create a sense of stillness and balance — a place where time slows down and each moment feels complete.</p>
         </div>
 
-        <div class="gallery reveal-scale">
-          <div class="gallery__item gallery__item--large">
-            <div class="gallery__caption">
-              <strong>Cabin mornings</strong>
-              <span>Warm blankets, coffee, fireplace and a still lake outside the window.</span>
-            </div>
-          </div>
-          <div class="gallery__item">
-            <div class="gallery__caption">
-              <strong>Misty water</strong>
-              <span>A quiet rowboat drifting through the pale morning fog.</span>
-            </div>
-          </div>
-          <div class="gallery__item">
-            <div class="gallery__caption">
-              <strong>Sunset moments</strong>
-              <span>Soft evening light, lanterns on the pier and calm water all around.</span>
-            </div>
-          </div>
-          <div class="gallery__item">
-            <div class="gallery__caption">
-              <strong>Family evenings</strong>
-              <span>Marshmallows by the fire and slow nights by the cabin.</span>
-            </div>
-          </div>
-          <div class="gallery__item">
-            <div class="gallery__caption">
-              <strong>Morning coffee</strong>
-              <span>Cappuccino, warm wood and the first light over the lake.</span>
-            </div>
-          </div>
+        <div class="gallery">
+          <div class="gallery__item gallery__item--large"></div>
+          <div class="gallery__item"></div>
+          <div class="gallery__item"></div>
+          <div class="gallery__item"></div>
+          <div class="gallery__item"></div>
         </div>
       </div>
     </section>
@@ -718,7 +721,7 @@ Every detail of the surroundings is designed to create a sense of stillness and 
     <section class="section" id="booking">
       <div class="container">
         <div class="booking">
-          <div class="card booking__intro reveal-left">
+          <div class="card booking__intro">
             <span class="eyebrow" style="color: var(--accent);">Booking</span>
             <h2>Plan your stay in Karelia</h2>
             <p>This final block is designed as a clear conversion point. It keeps the process simple and helps guests send an inquiry without distraction.</p>
@@ -729,7 +732,7 @@ Every detail of the surroundings is designed to create a sense of stillness and 
             </div>
           </div>
 
-          <div class="card booking__form reveal-right">
+          <div class="card booking__form">
             <span class="eyebrow" style="color: var(--accent);">Request</span>
             <h2>Check availability</h2>
             <p>Leave your preferred dates and cottage type. This form is part of the portfolio concept and can be connected to any booking workflow later.</p>
@@ -774,49 +777,5 @@ Every detail of the surroundings is designed to create a sense of stillness and 
       <div>Designed for a premium lakeside rental brand in Karelia</div>
     </div>
   </footer>
-  <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.16, rootMargin: '0px 0px -40px 0px' });
-
-    document.querySelectorAll('.reveal, .reveal-up, .reveal-scale, .reveal-left, .reveal-right').forEach((el) => {
-      observer.observe(el);
-    });
-
-    const header = document.querySelector('.site-header');
-    const onScroll = () => {
-      if (window.scrollY > 24) header.classList.add('is-scrolled');
-      else header.classList.remove('is-scrolled');
-    };
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-
-    const statObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        const stat = entry.target;
-        const target = Number(stat.dataset.count || 0);
-        const duration = 1400;
-        const startTime = performance.now();
-
-        const tick = (now) => {
-          const progress = Math.min((now - startTime) / duration, 1);
-          const eased = 1 - Math.pow(1 - progress, 3);
-          stat.textContent = Math.round(target * eased);
-          if (progress < 1) requestAnimationFrame(tick);
-        };
-
-        requestAnimationFrame(tick);
-        statObserver.unobserve(stat);
-      });
-    }, { threshold: 0.6 });
-
-    document.querySelectorAll('.stat__number').forEach((el) => statObserver.observe(el));
-  </script> 
 </body>
 </html>
